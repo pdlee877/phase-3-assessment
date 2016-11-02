@@ -5,6 +5,8 @@ class ToysController < ApplicationController
 
 		if request.xhr?
 			render partial: 'display'
+		else
+			render json: @toys
 		end
 		# localhost:3000/pets/1/toys returns a JSON blob of that pet's toys
 	end
