@@ -1,8 +1,16 @@
 <h1>All of the pets</h1>
 
 <!-- only 2 of the 3 pets were created from the seed file ?????? -->
+<!-- removed the pet's show page and moved the information to the index instead -->
+
 <ul>
 	<% @pets.each do |pet| %>
-		<li><%= link_to pet.name, pet_path(pet) %></li>
+		<li><%= link_to pet.name, pet_toy_path(pet, pet.toys), remote: true, class: 'pet-info' %></li>
+			<p>Breed: <%= pet.breed %></p>
+			<p>Age: 	<%= pet.age %></p>
+			<p>Cute: 	<%= pet.cute %></p>
 	<% end %>
 </ul>
+
+<div id="toys-display">
+</div>
