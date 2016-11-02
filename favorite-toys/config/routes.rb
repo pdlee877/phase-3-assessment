@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/home', to: "pets#index"
   root 'pets#index'
 
-  resources :pets, only:[:index, :show] do
-  	resources :toys
+  resources :pets, only:[:index] do
+  	resources :toys, only:[:show]
   end
 end
